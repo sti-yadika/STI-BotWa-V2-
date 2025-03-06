@@ -1,0 +1,12 @@
+module.exports = {
+    approval: {
+        num: "6282199509537",
+        text: "setujui",
+        set: "Harus mendapatkan persetujuan oleh creator script, Jika ingin memakai script ini",
+        greet: "Akses Di Setujui ✅"
+    },
+    creatorScript: '6282199509537',
+    filePath: './database/xkey',
+    checkFilePath: './case.js',
+    codeToDetect: `startBotz();`
+};
