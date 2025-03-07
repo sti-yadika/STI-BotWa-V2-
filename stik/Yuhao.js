@@ -6278,8 +6278,8 @@ case "cek":
 case "tagall":
 				{
 					if (!m.isGroup) return m.reply(mess.group)
-					if (!m.isAdmin) return m.reply(mess.admin)
-					if (!m.isBotAdmin) return m.reply(mess.botAdmin)
+					if (!isAdmins) return m.reply(mess.admins)
+					if (!isBotAdmins) return m.reply(mess.botAdmin)
 					let setv = pickRandom(listv)
 					let teks = `*Tag All*\n\n*Pesan :* ${q ? q : ""}\n\n`
 					for (let mem of m.metadata.participants) {
@@ -6296,8 +6296,8 @@ case "tagall":
 			case "h":
 				{
 					if (!m.isGroup) return m.reply(mess.group)
-					if (!m.isAdmin) return m.reply(mess.admin)
-					if (!m.isBotAdmin) return m.reply(mess.botAdmin)
+					if (!isAdmins) return m.reply(mess.admins)
+					if (isBotAdmins) return m.reply(mess.botAdmin)
 					zanspiw.sendMessage(
 						m.chat,
 						{ text: q ? q : "", mentions: m.metadata.participants.map((a) => a.id) },
