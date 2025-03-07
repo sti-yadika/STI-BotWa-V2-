@@ -624,7 +624,7 @@ zanspiw.sendMessage(from, { text: teks, contextInfo: {
 "containsAutoReply": true, 
 "mediaType": 1, 
 "thumbnail": fs.readFileSync(`./stik/thumnail/fake.jpg`),
-"sourceUrl": "https://www.youtube.com/@YTzanspiw" }}}, { quoted: fkontak }) }
+"sourceUrl": "https://www.youtube.com/@muhilman03" }}}, { quoted: fkontak }) }
 
 const reply2 = (teks) => {
 zanspiw.sendMessage(from, { text : teks }, { quoted : m })
@@ -3548,7 +3548,7 @@ case "rejectdepo": {
 
 case "menuall":
 case "allmenu": {
-  let image = ["https://cdn.alands.xyz/files/67b196e5d54092cf4981489e?&filename=1739691748400.jpeg"];
+  let image = ["./man.png"];
   let thumbnail = pickRandom(image);
   zanspiw.sendMessage(m.chat, { react: { text: '🔁️', key: m.key } });
   addCountCmd('#menu', m.sender, _cmd);
@@ -4080,7 +4080,7 @@ case "allmenu": {
 								title: "Mannn md",
 								body: 'Created by Hymannn',
 								thumbnailUrl: thumbnail,
-								sourceUrl: "https://zanspiw.alands.xyz",
+								sourceUrl: "https://portofoliomannn8124.pages.dev/",
           mimeType: "image/jpeg",
 								mediaType: 1,
 								renderLargerThumbnail: true
@@ -12372,8 +12372,8 @@ _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is 
 							externalAdReply: {
 								title: "Mannn md",
 								body: 'Created by Hymannn',
-								thumbnailUrl: "https://cdn.alands.xyz/files/67b196e5d54092cf4981489e?&filename=1739691748400.jpeg",
-								sourceUrl: "https://zanspiw-store.alands.xyz",
+								thumbnailUrl: "https://files.catbox.moe/gk0e3n.png",
+								sourceUrl: "https://portofoliomannn8124.pages.dev/",
           mimeType: "image/jpeg",
 								mediaType: 1,
                               previewType: "PHOTO",
