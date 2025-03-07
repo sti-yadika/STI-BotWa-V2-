@@ -9611,54 +9611,14 @@ reply('*SUCCESSFULLY DELETE THE USER*')
 }
         break
         
-        case "add":
-				{
-					if (!m.isGroup) return m.reply(mess.group)
-					if (!m.isAdmin) return m.reply(mess.admin)
-					if (!m.isBotAdmin) return m.reply(mess.botAdmin)
-					if (!text && !m.quoted) {
-						m.reply(`Contoh: ${prefix + command} 62xxx`)
-					} else {
-						const numbersOnly = text ? text.replace(/\D/g, "") + "@s.whatsapp.net" : m.quoted?.sender
-						try {
-							await zanspiw.groupParticipantsUpdate(m.chat, [numbersOnly], "add").then(async (res) => {
-								for (let i of res) {
-									let invv = await zanspiw.groupInviteCode(m.chat)
-									if (i.status == 408) return m.reply("Dia Baru-Baru Saja Keluar Dari Grub Ini!")
-									if (i.status == 401) return m.reply("Dia Memblokir Bot!")
-									if (i.status == 409) return m.reply("Dia Sudah Join!")
-									if (i.status == 500) return m.reply("Grub Penuh!")
-									if (i.status == 403) {
-										await zanspiw.sendMessage(
-											m.chat,
-											{
-												text: `@${numbersOnly.split("@")[0]} Tidak Dapat Ditambahkan\n\nKarena Target Private\n\nUndangan Akan Dikirimkan Ke\n-> wa.me/${numbersOnly.replace(/\D/g, "")}\nMelalui Jalur Pribadi`,
-												mentions: [numbersOnly],
-											},
-											{ quoted: m },
-										)
-										await zanspiw
-											.sendMessage(
-												`${numbersOnly ? numbersOnly : "628974719922@s.whatsapp.net"}`,
-												{
-													text: `${"https://chat.whatsapp.com/" + invv}\n------------------------------------------------------\n\nAdmin: @${m.sender.split("@")[0]}\nMengundang anda ke group ini\nSilahkan masuk jika berkehendak🙇`,
-													detectLink: true,
-													mentions: [numbersOnly, m.sender],
-												},
-												{ quoted: fkontak },
-											)
-											.catch((err) => m.reply("Gagal Mengirim Undangan!"))
-									} else if (i.status !== 200) {
-										m.reply("Gagal Add User")
-									}
-								}
-							})
-						} catch (e) {
-							m.reply("Gagal Add User")
-						}
-					}
-				}
-				break
+        case 'add': {
+		if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await zanspiw.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+	}
+	break
                 case "addusr": {
 
 if (!isCreator) return reply(`Maaf Command Tersebut Khusus Developer Bot WhatsApp`)
