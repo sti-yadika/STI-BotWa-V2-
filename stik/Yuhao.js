@@ -6183,13 +6183,150 @@ _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is 
 zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
 }
 break;
-case 'delcase': {
-    if (!isCreator) return reply(`*Access Denied ❌*\n\n*Owners only*`)
-    if (!q) return reply('*Masukan nama case yang akan di hapus*')
-    await Scraper.Tools.dellCase('./stik/massage.js', q)
-    reply('*Dellcase Successfully*\n\n© Dellcase By Hymannn')
-    }
-    break
+
+case "runtime":
+			case "tes":
+			case "bot":
+				{
+					if (text && text.startsWith("--") && isCreator) {
+						let buttonnya = [
+							{
+								name: "single_select",
+								buttonParamsJson: {
+									title: "Pilih",
+									sections: [
+										{
+											title: "Bot Settings",
+											rows: [
+												{ title: "Anti Call On🟢", description: "Mengaktifkan Anti Call", id: ".bot anticall on" },
+												{ title: "Anti Call Off🔴", description: "Mematikan Anti Call", id: ".bot anticall off" },
+												{ title: "Auto Bio On🟢", description: "Mengaktifkan Auto Bio", id: ".bot autobio on" },
+												{ title: "Auto Bio Off🔴", description: "Mematikan Auto Bio", id: ".bot autobio off" },
+												{ title: "Auto Read On🟢", description: "Mengaktifkan Auto Read", id: ".bot autoread on" },
+												{ title: "Auto Read Off🔴", description: "Mematikan Auto Read", id: ".bot autoread off" },
+												{ title: "Auto Type On🟢", description: "Mengaktifkan Auto Type", id: ".bot autotype on" },
+												{ title: "Auto Type Off🔴", description: "Mematikan Auto Type", id: ".bot autotype off" },
+												{ title: "Read SW On🟢", description: "Mengaktifkan Read SW", id: ".bot readsw on" },
+												{ title: "Read SW Off🔴", description: "Mematikan Read SW", id: ".bot readsw off" },
+												{
+													title: "Multi Prefix On🟢",
+													description: "Mengaktifkan Multi Prefix",
+													id: ".bot multiprefix on",
+												},
+												{
+													title: "Multi Prefix Off🔴",
+													description: "Mematikan Multi Prefix",
+													id: ".bot multiprefix off",
+												},
+											],
+										},
+									],
+								},
+							},
+						]
+						await zanspiw.sendButtonMsg(
+							m.chat,
+							"Bot Settings",
+							ucapanWaktu,
+							"Silahkan dipilih Owner🫡",
+							null,
+							buttonnya,
+							m,
+						)
+					} else if (text && isCreator) {
+						if (text === "anticall on") (db.set[botNumber].anticall = true), m.reply("Sukses Mengaktifkan Anticall")
+						if (text === "anticall off") (db.set[botNumber].anticall = false), m.reply("Sukses Mematikan Anticall")
+						if (text === "autobio on") (db.set[botNumber].autobio = true), m.reply("Sukses Mengaktifkan Autobio")
+						if (text === "autobio off") (db.set[botNumber].autobio = false), m.reply("Sukses Mematikan Autobio")
+						if (text === "autoread on") (db.set[botNumber].autoread = true), m.reply("Sukses Mengaktifkan Autoread")
+						if (text === "autoread off") (db.set[botNumber].autoread = false), m.reply("Sukses Mematikan Autoread")
+						if (text === "autotype on") (db.set[botNumber].autotyping = true), m.reply("Sukses Mengaktifkan Autotype")
+						if (text === "autotype off") (db.set[botNumber].autotyping = false), m.reply("Sukses Mematikan Autotype")
+						if (text === "readsw on") (db.set[botNumber].readsw = true), m.reply("Sukses Mengaktifkan Read SW")
+						if (text === "readsw off") (db.set[botNumber].readsw = false), m.reply("Sukses Mematikan Read SW")
+						if (text === "multiprefix on")
+							(db.set[botNumber].multiprefix = true), m.reply("Sukses Mengaktifkan Multiprefix")
+						if (text === "multiprefix off")
+							(db.set[botNumber].multiprefix = false), m.reply("Sukses Mematikan Multiprefix")
+						let settingsBot = Object.entries(db.set[botNumber])
+							.map(([key, value]) => {
+								let qhk = typeof value === "boolean" ? (value ? "on🟢" : "off🔴") : value
+								return `${key.charAt(0).toUpperCase() + key.slice(1)} : ${qhk}`
+							})
+							.join("\n")
+						if (text === "settings") m.reply(settingsBot)
+					} else {
+						zanspiw.sendMessage(
+							m.chat,
+							{ text: `*Bot Telah Online Selama*\n*${runtime(process.uptime())}*` },
+							{ quoted: m },
+						)
+					}
+				}
+				break;
+
+case "cek":
+				{
+					const user = Object.keys(db.users)
+					const infoUser = db.users[m.sender]
+					await m.reply(
+						`*👤Profile @${m.sender.split("@")[0]}* :\n🐋User Bot : ${user.includes(m.sender) ? "True" : "False"}\n🔥User : ${isVip ? "VIP" : isPremium ? "PREMIUM" : "FREE"}\n🎫Limit : ${infoUser.limit}\n💰Uang : ${infoUser ? infoUser.uang.toLocaleString("id-ID") : "0"}`,
+					)
+				}
+				break;
+
+case "tagall":
+				{
+					if (!m.isGroup) return m.reply(mess.group)
+					if (!m.isAdmin) return m.reply(mess.admin)
+					if (!m.isBotAdmin) return m.reply(mess.botAdmin)
+					let setv = pickRandom(listv)
+					let teks = `*Tag All*\n\n*Pesan :* ${q ? q : ""}\n\n`
+					for (let mem of m.metadata.participants) {
+						teks += `${setv} @${mem.id.split("@")[0]}\n`
+					}
+					await zanspiw.sendMessage(
+						m.chat,
+						{ text: teks, mentions: m.metadata.participants.map((a) => a.id) },
+						{ quoted: m },
+					)
+				}
+				break;
+			case "hidetag":
+			case "h":
+				{
+					if (!m.isGroup) return m.reply(mess.group)
+					if (!m.isAdmin) return m.reply(mess.admin)
+					if (!m.isBotAdmin) return m.reply(mess.botAdmin)
+					zanspiw.sendMessage(
+						m.chat,
+						{ text: q ? q : "", mentions: m.metadata.participants.map((a) => a.id) },
+						{ quoted: m },
+					)
+				}
+				break;
+
+case "delcase":
+				{
+					if (!isCreator) return m.reply(mess.owner)
+					if (!text) return m.reply("Masukkan Nama Casenya!")
+					fs.readFile("./stik/Yuhao.js", "utf8", (err, data) => {
+						if (err) {
+							console.error("Terjadi kesalahan saat membaca file:", err)
+							return
+						}
+						const regex = new RegExp(`case\\s+'${text.toLowerCase()}':[\\s\\S]*?break`, "g")
+						const modifiedData = data.replace(regex, "")
+						fs.writeFile("./stik/Yuhao.js", modifiedData, "utf8", (err) => {
+							if (err) {
+								m.reply("Terjadi kesalahan saat menulis file: ", err)
+							} else {
+								m.reply("Case berhasil dihapus dari file")
+							}
+						})
+					})
+				}
+				break;
 
 case 'bocchi': {
 if (!isCreator) return onlyOwn()
