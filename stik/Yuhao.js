@@ -6265,39 +6265,26 @@ case "runtime":
 				}
 				break;
 
-case "cek":
-				{
-					const user = Object.keys(db.users)
-					const infoUser = db.users[m.sender]
-					await m.reply(
-						`*👤Profile @${m.sender.split("@")[0]}* :\n🐋User Bot : ${user.includes(m.sender) ? "True" : "False"}\n🔥User : ${isVip ? "VIP" : isPremium ? "PREMIUM" : "FREE"}\n🎫Limit : ${infoUser.limit}\n💰Uang : ${infoUser ? infoUser.uang.toLocaleString("id-ID") : "0"}`,
-					)
-				}
-				break;
 
-case "tagall":
-				{
-					if (!m.isGroup) return m.reply(mess.group)
-					if (!isAdmins) return m.reply(mess.admins)
-					if (!isBotAdmins) return m.reply(mess.botAdmin)
-					let setv = pickRandom(listv)
-					let teks = `*Tag All*\n\n*Pesan :* ${q ? q : ""}\n\n`
-					for (let mem of m.metadata.participants) {
-						teks += `${setv} @${mem.id.split("@")[0]}\n`
-					}
-					await zanspiw.sendMessage(
-						m.chat,
-						{ text: teks, mentions: m.metadata.participants.map((a) => a.id) },
-						{ quoted: m },
-					)
-				}
-				break;
+case 'tagall': {
+                if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+                let teks = `══✪〘 *👥 Tag All* 〙✪══
+ 
+                ➲ *Pesan : ${q ? q : 'kosong'}*\n\n`
+                for (let mem of participants) {
+                teks += `⭔ @${mem.id.split('@')[0]}\n`
+                }
+                naze.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+                }
+                break;
 			case "hidetag":
 			case "h":
 				{
 					if (!m.isGroup) return m.reply(mess.group)
-					if (!isAdmins) return m.reply(mess.admins)
-					if (isBotAdmins) return m.reply(mess.botAdmin)
+					if (!m.isAdmins) return m.reply(mess.admin)
+					if (!m.botIsAdmin) return m.reply(mess.botAdmin)
 					zanspiw.sendMessage(
 						m.chat,
 						{ text: q ? q : "", mentions: m.metadata.participants.map((a) => a.id) },
