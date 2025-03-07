@@ -3931,14 +3931,14 @@ case "allmenu": {
 ┃❀${prefix}save
 ┃❀${prefix}cekidgc
 ┗━━━━━━━━━━━━━━
-┏━ ⊑ *INTERNET MENU* ⊒
-┃❀${prefix}tiktok
-┃❀${prefix}imgursearch
-┃❀${prefix}filmsearch
-┃❀${prefix}mcpedl
-┃❀${prefix}mcpedl-d
-┃❀${prefix}halodoc
-┃❀${prefix}nasa
+┏━ ⊑ *GROUP MENU* ⊒
+┃❀${prefix}tagall
+┃❀${prefix}hidetag
+┃❀${prefix}kick @user
+┃❀${prefix}add @user
+┃❀${prefix}promote
+┃❀${prefix}demote
+┃❀${prefix}antilink
 ┗━━━━━━━━━━━━━━
 ┏━ ⊑ *STICKER MENU* ⊒
 ┃❀${prefix}sticker
@@ -6064,41 +6064,26 @@ case 'editcase':
     }
     break;
 
+case 'addprem':
+				if (!isCreator) return m.reply(mess.owner)
+				{ q, args } {
+				if (args.length < 2)
+				return m.reply(
+				`Penggunaan :\n*#addprem* @tag waktu\n*#addprem* nomor waktu\n\nContoh : #addprem @tag 30d`
+				);
+				if (m.mentionedJid.length !== 0) {
+				for (let i = 0; i < m.mentionedJid.length; i++) {
+				prem.addPremiumUser(m.mentionedJid[0], args[1], premium);
+						}
+				zanspiw.sendMessage(m.chat, { text: "Sukses Premium" }, { quoted: fkontak });
+					} else {
+				prem.addPremiumUser(args[0] + "@s.whatsapp.net", args[1], premium);
+				zanspiw.sendMessage(m.chat, { text: "Sukses Via Nomor" }, { quoted: fkontak });
+						}
+					}
+				break;
 
-case "addprem": {
- // Ensure the user is the creator
- if (!isCreator) return reply(mess.only.creator);
 
- // Ensure a number is provided
- if (!args[0]) return reply(`Penggunaan ${prefix + command} nomor\nContoh ${prefix + command} 6285877276864`);
-
- // Extract the number, remove non-numeric characters, and format it for WhatsApp
- let number = args[0].replace(/[^0-9]/g, '');
- let prrkek = `${number}@s.whatsapp.net`;
-
- // Check if the number is valid on WhatsApp
- try {
- let ceknya = await zanspiw.onWhatsApp(prrkek);
- if (ceknya.length == 0) {
- return reply(`Masukkan Nomor Yang Valid Dan Terdaftar Di WhatsApp!!!`);
- }
-
- // Check if the number is already in the premium list
- if (isPremium.includes(prrkek)) {
- return reply(`Nomor ${prrkek} sudah ada di daftar premium!`);
- }
-
- // Add the number to the premium list and save it to the JSON file
- prem.push(prrkek);
- fs.writeFileSync("./lib/premium.json", JSON.stringify(prem, null, 2)); // Added formatting for readability
-
- reply(`Nomor ${prrkek} Telah Menjadi Premium!`);
- } catch (err) {
- console.error(err); // Log any error that occurs
- reply(`Terjadi kesalahan saat menambah nomor premium.`);
- }
-}
-break;
 case 'ramlist': {
     zanspiw.sendMessage(m.chat, { react: { text: '🌊️', key: m.key }});
     let wow = `👋Hallo » ${pushname}
@@ -6265,6 +6250,22 @@ case "runtime":
 				}
 				break;
 
+case 'promote': {
+		if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await zanspiw.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+	}
+	break;
+	case 'demote': {
+		if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await zanspiw.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+	}
+	break;
 
 case 'tagall': {
                 if (!m.isGroup) throw mess.group
@@ -6279,20 +6280,7 @@ case 'tagall': {
                 zanspiw.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
                 }
                 break;
-			case "hidetag":
-			case "h":
-				{
-					if (!m.isGroup) return m.reply(mess.group)
-					if (!m.isAdmins) return m.reply(mess.admin)
-					if (!m.botIsAdmin) return m.reply(mess.botAdmin)
-					zanspiw.sendMessage(
-						m.chat,
-						{ text: q ? q : "", mentions: m.metadata.participants.map((a) => a.id) },
-						{ quoted: m },
-					)
-				}
-				break;
-
+			
 case "delcase":
 				{
 					if (!isCreator) return m.reply(mess.owner)
@@ -12206,6 +12194,27 @@ async function createSticker(req, url, packName, authorName, quality) {
   }
   return (new Sticker(req ? req : url, stickerMetadata)).toBuffer()
 }
+
+case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
+		    try {
+	        let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
+	        if (!/image/.test(mime)) throw respond
+            if (!text) throw respond
+	        m.reply(mess.wait)
+            atas = text.split('|')[0] ? text.split('|')[0] : '-'
+            bawah = text.split('|')[1] ? text.split('|')[1] : '-'
+            let { TelegraPh } = require('./lib/uploader')
+            let mee = await zanspiw.downloadAndSaveMediaMessage(qmsg)
+            let mem = await TelegraPh(mee)
+	        let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${mem}`
+	        let awikwok = await zanspiw.sendImageAsSticker(m.chat, smeme, m, { packname: global.packname, author: global.author })
+	        await fs.unlinkSync(awikwok)
+	        } catch (e) {
+		    m.reply(`Error\nHarus Pakai Gambar!`)
+		    }
+            }
+	       break
+
 case 'sticker': case 's': {
  let ko = m.quoted? m.quoted : m 
  if (mime.includes("image")) {
