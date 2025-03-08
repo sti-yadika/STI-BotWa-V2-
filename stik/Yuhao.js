@@ -6303,6 +6303,25 @@ return m.reply(example("@tag/6285###"))
 }
 break;
 
+case "add": {
+if (!m.isGroup) return Reply(mess.group)
+if (!isCreator && !isAdmin) return Reply(mess.admin)
+if (!isBotAdmin) return Reply(mess.botAdmin)
+if (text) {
+const input = text ? text.replace(/[^0-9]/g, "") + "@s.whatsapp.net" : false
+var onWa = await zanspiw.onWhatsApp(input.split("@")[0])
+if (onWa.length < 1) return m.reply("Nomor tidak terdaftar di whatsapp")
+const res = await zanspiw.groupParticipantsUpdate(m.chat, [input], 'add')
+if (Object.keys(res).length == 0) {
+return m.reply(`Berhasil Menambahkan ${input.split("@")[0]} Kedalam Grup Ini`)
+} else {
+return m.reply(JSON.stringify(res, null, 2))
+}} else {
+return m.reply(example("62838###"))
+}
+}
+break;
+
 case 'tagall': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
