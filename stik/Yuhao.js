@@ -415,7 +415,7 @@ externalAdReply: {
 title: botname, 
 body: `© Powered By ${global.packname}`, 
 thumbnailUrl: "https://files.catbox.moe/gk0e3n.png", 
-sourceUrl: null,
+sourceUrl: ,"https://portofoliomannn8124.pages.dev/"
 }}}, {quoted: qkontak})
 }
 let DarahAwal = global.rpg.darahawal
@@ -6265,8 +6265,8 @@ case "runtime":
 case "demote":
 case "promote": {
 if (!m.isGroup) return Reply(mess.group)
-if (!m.isBotAdmin) return Reply(mess.botAdmin)
-if (!isCreator && !m.isAdmin) return Reply(mess.admin)
+if (!m.isBotAdmins) return Reply(mess.botAdmin)
+if (!isCreator && !m.isAdmins) return Reply(mess.admin)
 if (m.quoted || text) {
 var action
 let target = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
