@@ -6267,7 +6267,7 @@ await zanspiw.sendMessage(m.chat, {text: `Sukses ${action.toLowerCase()} @${targ
 return m.reply(example("@tag/6285###"))
 }
 }
-break
+break;
 
 case 'tagall': {
                 if (!m.isGroup) throw mess.group
