@@ -418,6 +418,22 @@ thumbnailUrl: "https://files.catbox.moe/gk0e3n.png",
 sourceUrl: null,
 }}}, {quoted: qkontak})
 }
+const nomore = m.sender.replace(/[^0-9]/g, '')
+const qkontak = {
+key: {
+participant: `${nomore}@s.whatsapp.net`,
+...(botNumber ? {
+remoteJid: `status@broadcast`
+} : {})
+},
+message: {
+'contactMessage': {
+'displayName': `${pushname}`,
+'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;ttname,;;;\nFN:ttname\nitem1.TEL;waid=31629821394:+31 6 29821394\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
+sendEphemeral: true
+}}
+}
+
 let DarahAwal = global.rpg.darahawal
 const ikan = ['🐳','🐟','🐠']
 //========================================================================//
