@@ -415,7 +415,7 @@ externalAdReply: {
 title: botname, 
 body: `© Powered By ${global.packname}`, 
 thumbnailUrl: "https://files.catbox.moe/gk0e3n.png", 
-sourceUrl: ,"https://portofoliomannn8124.pages.dev/"
+sourceUrl: null,
 }}}, {quoted: qkontak})
 }
 let DarahAwal = global.rpg.darahawal
