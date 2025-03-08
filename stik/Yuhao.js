@@ -419,6 +419,9 @@ thumbnailUrl: "https://files.catbox.moe/gk0e3n.png",
 sourceUrl: null,
 }}}, {quoted: qkontak})
 }
+const example = (teks) => {
+return `\n *Contoh Penggunaan :*\n Ketik *${prefix+command}* ${teks}\n`
+}
 const botNumber = await zanspiw.decodeJid(zanspiw.user.id)
 const pushname = m.pushName || `${senderNumber}`
 const nomore = m.sender.replace(/[^0-9]/g, '')
