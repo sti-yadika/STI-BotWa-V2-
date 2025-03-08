@@ -472,7 +472,7 @@ const command = isCmd ? body.slice(prefix.length).trim().split(' ').shift().toLo
 const args = body.trim().split(/ +/).slice(1)
 const text = q = args.join(" ")
 const sender = m.key.fromMe ? (zanspiw.user.id.split(':')[0]+'@s.whatsapp.net' || zanspiw.user.id) : (m.key.participant || m.key.remoteJid)
-const botNumber = await zanspiw.decodeJid(zanspiw.user.id)
+
 const senderNumber = sender.split('@')[0]
 const isCreator = (m && m.sender && [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)) || false;
 const pushname = m.pushName || `${senderNumber}`
