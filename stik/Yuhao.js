@@ -406,6 +406,18 @@ const { getLimit, isLimit, limitAdd, giveLimit, addBalance, kurangBalance, getBa
 const { addInventoriLimit, cekDuluJoinAdaApaKagaLimitnyaDiJson, addLimit, kurangLimit, /*getLimit*/ } = require('../src/limit.js')
 const { cekDuluHasilBuruanNya, addInventoriBuruan, addIkan, addAyam,  addKelinci,  addDomba,  addSapi, addGajah, kurangIkan, kurangAyam,  kurangKelinci,  kurangDomba,  kurangSapi, kurangGajah, getIkan, getAyam,  getKelinci, getDomba,getSapi, getGajah } = require('../src/buruan.js')
 const { getLevelingXp,getLevelingLevel,getLevelingId,addLevelingXp,addLevelingLevel,addLevelingId,addATM,addKoinUser,checkATMuser,getMancingIkan,getMancingId,addMancingId,jualIkan,addPlanet,getBertualangPlanet,getPlaneId,addPlaneId,jualbahankimia,addCoal,getMiningcoal,getMiningId,addMiningId,jualcoal,addStone,getMiningstone,getBatuId,addBatuId,jualstone,addOre,getMiningore,getOreId,addOreId,jualore,addIngot,getMiningingot,getIngotId,addIngotId,jualingot,addKayu,getNebangKayu,getNebangId,addNebangId,jualKayu, checkPetualangUser, addDm, sellDm, getDm} = require('../baseoka/rpg.js')
+const Reply = async (teks) => {
+return zanspiw.sendMessage(m.chat, {text: teks, mentions: [m.sender], contextInfo: {
+isForwarded: true, 
+forwardingScore: 9999, 
+businessMessageForwardInfo: { businessOwnerJid: global.owner+"@s.whatsapp.net" }, forwardedNewsletterMessageInfo: { newsletterName: `${global.botname}`, newsletterJid: global.idSaluran }, 
+externalAdReply: {
+title: botname, 
+body: `© Powered By ${global.packname}`, 
+thumbnailUrl: "https://files.catbox.moe/gk0e3n.png", 
+sourceUrl: ,"https://portofoliomannn8124.pages.dev/"
+}}}, {quoted: qkontak})
+}
 let DarahAwal = global.rpg.darahawal
 const ikan = ['🐳','🐟','🐠']
 //========================================================================//
