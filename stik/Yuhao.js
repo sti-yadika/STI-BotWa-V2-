@@ -418,6 +418,7 @@ thumbnailUrl: "https://files.catbox.moe/gk0e3n.png",
 sourceUrl: null,
 }}}, {quoted: qkontak})
 }
+const botNumber = await zanspiw.decodeJid(zanspiw.user.id)
 const nomore = m.sender.replace(/[^0-9]/g, '')
 const qkontak = {
 key: {
