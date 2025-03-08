@@ -6250,22 +6250,24 @@ case "runtime":
 				}
 				break;
 
-case 'promote': {
-		if (!m.isGroup) throw mess.group
-                if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
-		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await zanspiw.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
-	}
-	break;
-	case 'demote': {
-		if (!m.isGroup) throw mess.group
-                if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
-		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await zanspiw.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
-	}
-	break;
+case "demote":
+case "promote": {
+if (!m.isGroup) return Reply(mess.group)
+if (!m.isBotAdmin) return Reply(mess.botAdmin)
+if (!isCreator && !m.isAdmin) return Reply(mess.admin)
+if (m.quoted || text) {
+var action
+let target = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+if (/demote/.test(command)) action = "Demote"
+if (/promote/.test(command)) action = "Promote"
+await zanspiw.groupParticipantsUpdate(m.chat, [target], action.toLowerCase()).then(async () => {
+await zanspiw.sendMessage(m.chat, {text: `Sukses ${action.toLowerCase()} @${target.split("@")[0]}`, mentions: [target]}, {quoted: m})
+})
+} else {
+return m.reply(example("@tag/6285###"))
+}
+}
+break
 
 case 'tagall': {
                 if (!m.isGroup) throw mess.group
