@@ -6305,8 +6305,8 @@ break;
 
 case "add": {
 if (!m.isGroup) return Reply(mess.group)
-if (!isCreator && !isAdmin) return Reply(mess.admin)
-if (!isBotAdmin) return Reply(mess.botAdmin)
+if (!isCreator && !isAdmins) return Reply(mess.admin)
+if (!isBotAdmins) return Reply(mess.botAdmin)
 if (text) {
 const input = text ? text.replace(/[^0-9]/g, "") + "@s.whatsapp.net" : false
 var onWa = await zanspiw.onWhatsApp(input.split("@")[0])
