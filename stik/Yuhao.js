@@ -387,6 +387,7 @@ const { addResponList, delResponList, isAlreadyResponList, isAlreadyResponListGr
 const { xzeus, experiment1, zcb, rdo, rdo2, dbuz, locl, bounds, bounds2, listr, mbg, caltx, uzc, lza, paym } = require("../src/myfunc");
 const { isSetProses, addSetProses, removeSetProses, zanspiwngeSetProses, getTextSetProses } = require('../lib/setproses');
 const { isSetDone, addSetDone, removeSetDone, zanspiwngeSetDone, getTextSetDone } = require('../lib/setdone');
+
     const isPremium = (JSON.parse(fs.readFileSync("./lib/premium.json"))).includes(m.sender) || false
 const config = require('../lib/adiwConfig')
 const terdaftar = JSON.parse(fs.readFileSync('./database/user.json'))
@@ -419,6 +420,7 @@ sourceUrl: null,
 }}}, {quoted: qkontak})
 }
 const botNumber = await zanspiw.decodeJid(zanspiw.user.id)
+const pushname = m.pushName || `${senderNumber}`
 const nomore = m.sender.replace(/[^0-9]/g, '')
 const qkontak = {
 key: {
@@ -475,7 +477,7 @@ const sender = m.key.fromMe ? (zanspiw.user.id.split(':')[0]+'@s.whatsapp.net' |
 
 const senderNumber = sender.split('@')[0]
 const isCreator = (m && m.sender && [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)) || false;
-const pushname = m.pushName || `${senderNumber}`
+
 const isBot = botNumber.includes(senderNumber)
 const isUser = terdaftar.includes(m.sender)
 const quoted = m.quoted ? m.quoted : m
