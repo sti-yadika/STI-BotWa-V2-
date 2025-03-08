@@ -6284,8 +6284,8 @@ case "runtime":
 case "demote":
 case "promote": {
 if (!m.isGroup) return Reply(mess.group)
-if (!m.isBotAdmins) return Reply(mess.botAdmin)
-if (!isCreator && !m.isAdmins) return Reply(mess.admin)
+if (!isBotAdmins) return Reply(mess.botAdmin)
+if (!isCreator && !isAdmins) return Reply(mess.admin)
 if (m.quoted || text) {
 var action
 let target = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
