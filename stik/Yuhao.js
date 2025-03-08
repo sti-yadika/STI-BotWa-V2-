@@ -67,6 +67,72 @@ type: 'append'
 }
 zanspiw.ev.emit('messages.upsert', msg)
 }
+let mentionUser = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
+for (let jid of mentionUser) {
+let user = global.db.users[jid]
+if (!user) continue
+let afkTime = user.afkTime
+if (!afkTime || afkTime < 0) continue
+let reason = user.afkReason || ''
+m.reply(`${tag} sedang *Afk* ${reason ? 'karena ' + reason : 'tanpa alasan'} selama *${clockString(new Date - afkTime)}*
+`.trim())
+}
+if (global.db.users[sender].afkTime > -1) {
+let user = global.db.users[sender]
+m.reply(`${tag} telah kembali dari *Afk* ${user.afkReason ? 'setelah ' + user.afkReason : ''}\nselama *${clockString(new Date - user.afkTime)}*`.trim())
+user.afkTime = -1
+user.afkReason = ''
+}
+
+zanspiw.autoshalat = zanspiw.autoshalat ? zanspiw.autoshalat : {}
+    let id = m.chat
+    if (id in zanspiw.autoshalat) {
+    return false
+    }
+    let jadwalSholat = {
+    shubuh: '04:29',
+    terbit: '05:44',
+    dhuha: '06:02',
+    dzuhur: '12:02',
+    ashar: '15:15',
+    magrib: '17:52',
+    isya: '19:01',
+    }
+    const datek = new Date((new Date).toLocaleString("en-US", {
+    timeZone: "Asia/Jakarta"
+    }));
+    const hours = datek.getHours();
+    const minutes = datek.getMinutes();
+    const timeNow = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`
+    for (let [sholat, waktu] of Object.entries(jadwalSholat)) {
+    if (timeNow === waktu) {
+        zanspiw.autoshalat[id] = [
+            zanspiw.sendMessage(m.chat, {
+audio: {
+    url: 'https://media.vocaroo.com/mp3/1ofLT2YUJAjQ'
+},
+mimetype: 'audio/mp4',
+ptt: true,
+contextInfo: {
+    externalAdReply: {
+        showAdAttribution: true,
+        mediaType: 1,
+        mediaUrl: '',
+        title: `Selamat menunaikan Ibadah Sholat ${sholat}`,
+        body: `🕑 ${waktu}`,
+        sourceUrl: '',
+        thumbnail: await fs.readFileSync('./baseoka/media/man.png'),
+        renderLargerThumbnail: true
+    }
+}
+            }, {}),
+            setTimeout(async () => {
+delete zanspiw.autoshalat[m.chat]
+            }, 57000)
+        ]
+    }
+    }
+
 //EPHOTO
 const FormData = require("form-data");
 async function ephoto(url, texk) {
@@ -6278,6 +6344,15 @@ await zanspiw.sendMessage(m.chat, {text: `Sukses ${action.toLowerCase()} @${targ
 } else {
 return m.reply(example("@tag/6285###"))
 }
+}
+break;
+
+case 'afk': {
+if (!m.isGroup) return Reply('Khusus Grou')
+let user = global.db.users[m.sender]
+user.afkTime = + new Date
+user.afkReason = text
+reply(`${tag} telah AFK dengan alasan ${text ? ': ' + text : ''}`)
 }
 break;
 
