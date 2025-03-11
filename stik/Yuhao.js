@@ -10095,7 +10095,7 @@ console.error('Kesalahan pada API skizo.tech:', err)
 
 case 'jadwalsholat':
 if (!text) return reply(`*Contoh:* ${prefix + command} palembang`)
-axios.get(`https://apisanz.my.id/search/jadwalsholat?search=${text}}`)
+axios.get(`https://www.dream.co.id/jadwal-sholat/${text}}`)
 .then(({ data }) => {
 var tet = `\`Kota = ${data.data.kota}\`\n\n`
 tet += `Tanggal = ${data.data.tanggal}`
