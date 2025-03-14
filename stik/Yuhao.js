@@ -653,7 +653,7 @@ const reply = (teks) => {
 zanspiw.sendMessage(from, { text: teks, contextInfo: { 
 "externalAdReply": { 
 "showAdAttribution": true, 
-"title": `⪼ Client - MannnMd`,
+"title": `⪼ Client - MannnMD`,
 "body": `Hallo ${pushname}`,
 "containsAutoReply": true, 
 "mediaType": 1, 
@@ -3195,7 +3195,7 @@ case 'ttp': {
 
     await zanspiw.sendImageAsSticker(m.chat, buffer, m, {
       packname: 'Sticker by',
-      author: `Mannn md`
+      author: `Mannn MD`
     })
   } catch (e) {
     console.error(e)
@@ -3211,7 +3211,7 @@ case "bratvid": case "bratvideo":{
         let videoBuffer = response.data;
         let stickerBuffer = await zanspiw.sendVideoAsSticker(m.chat, videoBuffer, m, {
             packname: "Stiker By",
-            author: "Mannn md",
+            author: "Mannn MD",
         });
         console.log("Stiker berhasil dibuat:", stickerBuffer);
     } catch (err) {
@@ -3594,7 +3594,7 @@ case "allmenu": {
 🌊Type » Plugins x Case
 💸Saldo » Rp${toRupiah(cekSaldo(sender, db_saldo))}`;
 
-  let wak = `Mannn - DEV || 2023 - 2024`;
+  let wak = `Mannn - DEV || 2025`;
 
   let allMenu = `
 *「 Fitur Bot 」*
@@ -4111,7 +4111,7 @@ case "allmenu": {
 							forwardingScore: 9999999,
 							isForwarded: true,
 							externalAdReply: {
-								title: "Mannn md",
+								title: "Mannn MD",
 								body: 'Created by Hymannn',
 								thumbnailUrl: thumbnail,
 								sourceUrl: "https://portofoliomannn8124.pages.dev/",
@@ -4148,7 +4148,7 @@ case 'ownermenu': case "menuowner": {
 13. ${prefix}self
 14. ${prefix}getcase
 
-*📮Mannn* adalah bot WhatsApp yang dikembangkan menggunakan NodeJS dan Baileys. Terima kasih atas dukungannya.`;
+*📮MannnMD* adalah bot WhatsApp yang dikembangkan menggunakan NodeJS dan Baileys. Terima kasih atas dukungannya.`;
 
   m.reply(wow);
 }
@@ -4167,7 +4167,7 @@ case 'internetmenu': {
 5. ${prefix}facebook
 6. ${prefix}imgursearch
 7. ${prefix}filmsearch
-*📮Mannn* adalah bot WhatsApp yang dikembangkan menggunakan NodeJS dan Baileys. Terima kasih atas dukungannya.`;
+*📮MannnMD* adalah bot WhatsApp yang dikembangkan menggunakan NodeJS dan Baileys. Terima kasih atas dukungannya.`;
 
   m.reply(wow);
 }
@@ -4184,7 +4184,7 @@ case 'marketing': {
 4. ${prefix}suntiktiktok - Suntik Tiktok View, Like, Followers
 5. ${prefix}vps - VPS Digital Ocean, Harga tersedia
 
-*📮Mannn* adalah bot WhatsApp yang dikembangkan menggunakan NodeJS dan Baileys. Terima kasih atas dukungannya.`;
+*📮MannnMD* adalah bot WhatsApp yang dikembangkan menggunakan NodeJS dan Baileys. Terima kasih atas dukungannya.`;
 
   m.reply(wow);
 }
@@ -4216,17 +4216,17 @@ case 'coganmenu': {
 ││❀${prefix}wufiyan
 └─────────────────┈ 
  │𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : _@Mannn_
- │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMd_
+ │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMD_
  └─────────────────┈ ✈
 
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Mannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
-_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Mannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4268,17 +4268,17 @@ case 'ephotomenu': {
 ││❀${prefix} lighteffects
 └─────────────────┈ 
  │𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : _@Mannn_
- │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMd_
+ │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMD_
  └─────────────────┈ ✈
 
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Mannn Botz Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Mannn Botz Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
-_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Mannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4294,11 +4294,11 @@ case 'aimenu': case "menuai":{
 * ${prefix}llama
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Mannn Botz Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Mannn Botz Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
-_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Mannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4323,8 +4323,8 @@ case 'gamemenu': {
 * ${prefix}siapakahaku
 * ${prefix}tebaksusunkata
 * ${prefix}tebaktekateki
-*📮MannnMd* adalah bot WhatsApp yang dikembangkan dengan menggunakan NodeJS dan Baileys. Terima kasih.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+*📮MannnMD* adalah bot WhatsApp yang dikembangkan dengan menggunakan NodeJS dan Baileys. Terima kasih.`;
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4369,11 +4369,11 @@ case 'nsfwmenu': {
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Mannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
-_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Mannn, Enjoy our Botz Features_.`;
-    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
+    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4467,11 +4467,11 @@ case 'animemenu': {
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Mannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
-_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Mannn, Enjoy our Botz Features_.`;
-    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
+    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4508,11 +4508,11 @@ case 'rpgmenu': {
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Mannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
-_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Mannn, Enjoy our Botz Features_.`;
-    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
+    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 case 'soundmenu': {
@@ -4545,11 +4545,11 @@ case 'soundmenu': {
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Mannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
-    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4603,11 +4603,11 @@ case 'animemenuv2': {
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Mannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
-_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Mannn, Enjoy our Botz Features_.`;
-    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
+    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4633,11 +4633,11 @@ case 'panelmenu': {
 ⭔${prefix}listadmin
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Mannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
-_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Mannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4722,11 +4722,11 @@ case 'textWangsaf': {
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Mannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
-_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Mannn, Enjoy our Botz Features_.`;
-    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+_Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
+    zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -4969,7 +4969,7 @@ let wow = `👋Hallo » ${pushname}
  ❥ .. ‘ cara order !
  ㅤ “ 𑁯 ׄ 
 
-ﾟ☞ ✿⁠ pc admin atau tag admin Mannn 
+ﾟ☞ ✿⁠ pc admin atau tag admin Hymannn 
 ﾟ☞ ✿⁠ tanyakan stok yang ingin kalian beli terlebih dahulu
 ﾟ☞ ✿⁠ jika redi, ketik *pay* di grub
 ﾟ☞ ✿⁠ lalu tf ke payment & qr admin 
@@ -4988,7 +4988,7 @@ break
 
 case 'jasaeditsc':
 case 'editscript':{
-let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:WhatsApp;ciaa xyzz\nORG: Mannn\nTITLE:soft\nitem1.TEL;waid=628974719922:628974719922\nitem1.X-ABLabel:Ponsel\nitem2.URL:https://www.youtube.com/@muhilman03\nitem2.X-ABLabel:ðŸ’¬ More\nitem3.EMAIL;type=INTERNET: compakzii@gmail.com\nitem3.X-ABLabel:Email\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABADR:ðŸ’¬ More\nitem4.X-ABLabel:Lokasi\nEND:VCARD`;
+let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:WhatsApp;ciaa xyzz\nORG: Hymannn\nTITLE:soft\nitem1.TEL;waid=628974719922:628974719922\nitem1.X-ABLabel:Ponsel\nitem2.URL:https://www.youtube.com/@muhilman03\nitem2.X-ABLabel:ðŸ’¬ More\nitem3.EMAIL;type=INTERNET: compakzii@gmail.com\nitem3.X-ABLabel:Email\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABADR:ðŸ’¬ More\nitem4.X-ABLabel:Lokasi\nEND:VCARD`;
 zanspiw.sendMessage(m.chat, { react: { text: '🌊️', key: m.key }})
 let wow = `👋Hallo » ${pushname}
 
@@ -5526,7 +5526,7 @@ case 'brat': {
 
     const buf = await res.buffer();
     await zanspiw.sendImageAsSticker(m.chat, buf, m, { 
-      packname: "MANNN MD", 
+      packname: "Mannn MD", 
       author: "Hymannn" 
     });
   } catch (error) {
@@ -6134,7 +6134,7 @@ case 'ramlist': {
 ❀ ${prefix}unli
 
 `;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -6195,11 +6195,11 @@ case 'librarymenu': {
 ┗❐
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -6879,11 +6879,11 @@ case 'quotesmenu': {
 ┣» *${prefix}quotesbijak*
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -6900,17 +6900,17 @@ case 'cecanasia': {
 ││❀${prefix} china
 └─────────────────┈ 
  │𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : _@Hymannn_
- │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMd_
+ │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMD_
  └─────────────────┈ ✈
 
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -7282,17 +7282,17 @@ ${prefix} ꜱʜɪᴏ
 
 └─────────────────┈ 
  │𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : _@Hymannn_
- │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMd_
+ │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMD_
  └─────────────────┈ ✈
 
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -12312,35 +12312,35 @@ async function createSticker(req, url, packName, authorName, quality) {
 }
 
 case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
-		    try {
-	        let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
-	        if (!/image/.test(mime)) throw respond
-            if (!text) throw respond
-	        m.reply(mess.wait)
-            atas = text.split('|')[0] ? text.split('|')[0] : '-'
-            bawah = text.split('|')[1] ? text.split('|')[1] : '-'
-            let { TelegraPh } = require('./lib/uploader')
-            let mee = await zanspiw.downloadAndSaveMediaMessage(qmsg)
-            let mem = await TelegraPh(mee)
-	        let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${mem}`
-	        let awikwok = await zanspiw.sendImageAsSticker(m.chat, smeme, m, { packname: global.packname, author: global.author })
-	        await fs.unlinkSync(awikwok)
-	        } catch (e) {
-		    m.reply(`Error\nHarus Pakai Gambar!`)
-		    }
-            }
-	       break
+				try {
+					//if (!isPremium) return m.reply(mess.prem)
+					if (!isLimit) return m.reply(mess.limit)
+					if (!/image|webp/.test(mime)) return m.reply(`Kirim/reply image/sticker\nDengan caption ${prefix + command} atas|bawah`)
+					if (!text) return m.reply(`Kirim/reply image/sticker dengan caption ${prefix + command} atas|bawah`)
+					m.reply(mess.wait)
+					let atas = text.split`|`[0] ? text.split`|`[0] : '-'
+					let bawah = text.split`|`[1] ? text.split`|`[1] : '-'
+					let media = await quoted.download()
+					let mem = await UguuSe(media)
+					let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${mem.url}`
+					await zanspiw.sendAsSticker(m.chat, smeme, m, { packname: packname, author: author })
+					setLimit(m, db)
+				} catch (e) {
+					m.reply('Server Meme Sedang Offline!')
+				}
+			}
+			break
 
 case 'sticker': case 's': {
  let ko = m.quoted? m.quoted : m 
  if (mime.includes("image")) {
  let media = await ko.download()
  
- zanspiw.sendImageAsSticker(m.chat, media, m, { packname: "MANNN MD", author: "Hymannn" })
+ zanspiw.sendImageAsSticker(m.chat, media, m, { packname: "Mannn MD", author: "Hymannn" })
  } else if (mime.includes("video")) {
  let media = await ko.download()
  
- zanspiw.sendVideoAsSticker(m.chat, media, m, { packname: "MANNN MD", author: "Hymannn" })
+ zanspiw.sendVideoAsSticker(m.chat, media, m, { packname: "Mannn MD", author: "Hymannn" })
  }
 }
 break
@@ -12375,7 +12375,7 @@ const json = {
 
 const res = await quoteApi(json)
 const buffer = Buffer.from(res.image, 'base64')
- zanspiw.sendImageAsSticker(m.chat, buffer, m, { packname: "MANNN MD", author: "Hymannn" })
+ zanspiw.sendImageAsSticker(m.chat, buffer, m, { packname: "Mannn MD", author: "Hymannn" })
   }
   break
 case "clear-bug":
@@ -12429,7 +12429,7 @@ let wow = `*👋 Hallo kak ${pushname}*
 └─────────────────┈ 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
@@ -12437,7 +12437,7 @@ _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is 
 							forwardingScore: 9999999,
 							isForwarded: true,
 							externalAdReply: {
-								title: "Mannn md",
+								title: "Mannn MD",
 								body: 'Created by Hymannn',
 								thumbnailUrl: "https://files.catbox.moe/gk0e3n.png",
 								sourceUrl: "https://portofoliomannn8124.pages.dev/",
@@ -12467,17 +12467,17 @@ case 'islammenu': {
 ││❀${prefix}jadwalsholat
 └─────────────────┈ 
  │𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : _@Hymannn_
- │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMd_
+ │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMD_
  └─────────────────┈ ✈
 
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -12520,17 +12520,17 @@ case 'randommenu': {
 ││❀${prefix}cekmati
 └─────────────────┈ 
  │𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : _@Hymannn_
- │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMd_
+ │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMD_
  └─────────────────┈ ✈
 
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 case 'beritamenu': {
@@ -12560,17 +12560,17 @@ case 'beritamenu': {
 ││❀${prefix}gempa
 └─────────────────┈ 
  │𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : _@Hymannn_
- │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMd_
+ │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMD_
  └─────────────────┈ ✈
 
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -12589,17 +12589,17 @@ case 'asupanmenu': {
 ││❀${prefix}tiktoksantuy
 └─────────────────┈ ✈
  │𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 : _@Hymannn_
- │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMd_
+ │𝘼𝙥𝙥𝙡𝙞𝙘𝙖𝙩𝙞𝙤𝙣 𝘽𝙮 : _@MannnMD_
  └─────────────────┈ ✈
 
 
 *Indonesian version*
 
-_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami__
+_Hallo!! Selamat datang Di Menu Botz Mannn Multidevice Pencipta bot ini Adalah Hymannn, Selamat Menikmati Fitur Botz kami_
 
 *English version*
 _Hello!! Welcome to the Mannn Multidevice Botz Menu. The creator of this bot is Hymannn, Enjoy our Botz Features_.`;
-zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/vsw7k0.jpg"}, caption: wow});
+zanspiw.sendMessage(m.chat, { image: { url: "https://files.catbox.moe/gk0e3n.png"}, caption: wow});
 }
 break;
 
@@ -12633,7 +12633,8 @@ case 'storemenu': {
    Deskripsi: VPS Digital Ocean.
    Ketik: .vps
 
-5. 📢 *Sc Mannn-Md New*
+5. 📢 *Sc 
+-Md New*
    Harga: 40k
    Deskripsi: Sell Script Store + Md.
    Ketik: .script`;
