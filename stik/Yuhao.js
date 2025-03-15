@@ -9992,7 +9992,7 @@ CREATED AT: ${server.created_at}`)
 case "upchannel": {
 if (!isCreator) return Reply(mess.owner)
 if (!text) return m.reply(example("teksnya"))
-await zanspiw.sendMessage(global.idSaluran, {text: text})
+await zanspiw.sendMessage(`${global.idch}`, {text: text})
 m.reply("Berhasil mengirim pesan *teks* ke dalam channel whatsapp")
 }
 break
@@ -10004,7 +10004,7 @@ if (!/image/.test(mime)) return m.reply(example("teksnya dengan mengirim foto"))
 let img = await zanspiw.downloadAndSaveMediaMessage(quoted)
 //await zanspiw.sendMessage(idSaluran, {image: await fs.readFileSync(img), caption: text})
 
-await zanspiw.sendMessage(global.idSaluran,{image: await fs.readFileSync(img), caption: text,
+await zanspiw.sendMessage(`${global.idch}`,{image: await fs.readFileSync(img), caption: text,
  contextInfo: {
  mentionedJid: [m.sender, isCreator],
  forwardedNewsletterMessageInfo: {
