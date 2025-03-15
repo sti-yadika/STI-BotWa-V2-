@@ -9997,6 +9997,41 @@ m.reply("Berhasil mengirim pesan *teks* ke dalam channel whatsapp")
 }
 break
 
+case "upchannel2": {
+if (!isCreator) return Reply(mess.owner)
+if (!text) return m.reply(example("teksnya dengan mengirim foto"))
+if (!/image/.test(mime)) return m.reply(example("teksnya dengan mengirim foto"))
+let img = await zanspiw.downloadAndSaveMediaMessage(qmsg)
+//await zanspiw.sendMessage(idSaluran, {image: await fs.readFileSync(img), caption: text})
+
+await zanspiw.sendMessage(global.idSaluran,{image: await fs.readFileSync(img), caption: text,
+ contextInfo: {
+ mentionedJid: [m.sender, owned11],
+ forwardedNewsletterMessageInfo: {
+ newsletterJid: `120363409989642612@newsletter`,
+ newsletterName: `Coba Coba`,
+ serverMessageId: -1
+ },
+ 	businessMessageForwardInfo: { businessOwnerJid: zanspiw.decodeJid(zanspiw.user.id)  },
+
+ forwardingScore: 999,
+ isForwarded: false,
+ externalAdReply: {
+ showAdAttribution: true, 
+ title: `photo dari: ${pushname}`,
+ body: `message to channel from: ${m.isGroup ? `${groupMetadata.subject}` : !m.isGroup ? "chat" : "Free User"}`,
+ thumbnailUrl: ppuser,
+ sourceUrl: `${text}`,
+ mediaType: 1,
+ renderLargerThumbnail: false
+ }
+ }
+ })
+m.reply("Berhasil mengirim pesan *teks & foto* ke dalam channel whatsapp")
+await fs.unlinkSync(img)
+}
+break
+
 case"upch": {
 if (!text) return m.reply("reply audio\ncontoh: .upch (wm nya)")
 zanspiw.sendMessage(m.chat, { react: { text: '⏳', key: m.key, }})
