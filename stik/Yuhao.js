@@ -478,6 +478,10 @@ sourceUrl: null,
 const example = (teks) => {
 return `\n *Contoh Penggunaan :*\n Ketik *${prefix+command}* ${teks}\n`
 }
+const sender = m.key.fromMe ? (zanspiw.user.id.split(':')[0]+'@s.whatsapp.net' || zanspiw.user.id) : (m.key.participant || m.key.remoteJid)
+
+const senderNumber = sender.split('@')[0]
+const isCreator = (m && m.sender && [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)) || false;
 const botNumber = await zanspiw.decodeJid(zanspiw.user.id)
 const pushname = m.pushName || `${senderNumber}`
 const nomore = m.sender.replace(/[^0-9]/g, '')
@@ -532,10 +536,6 @@ const isCmd = body.startsWith(prefix);
 const command = isCmd ? body.slice(prefix.length).trim().split(' ').shift().toLowerCase() : '';
 const args = body.trim().split(/ +/).slice(1)
 const text = q = args.join(" ")
-const sender = m.key.fromMe ? (zanspiw.user.id.split(':')[0]+'@s.whatsapp.net' || zanspiw.user.id) : (m.key.participant || m.key.remoteJid)
-
-const senderNumber = sender.split('@')[0]
-const isCreator = (m && m.sender && [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)) || false;
 
 const isBot = botNumber.includes(senderNumber)
 const isUser = terdaftar.includes(m.sender)
