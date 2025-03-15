@@ -3659,30 +3659,7 @@ case "allmenu": {
 ┃❀ ${prefix}addsaldo
 ┃❀ ${prefix}minsaldo
 ┃❀ ${prefix}delsesi
-┃❀ ${prefix}case"upch":
-case 'upsaluran':{
-if (!text) return m.reply("reply audio\ncontoh: .upch (wm nya)")
-zanspiw.sendMessage(m.chat, { react: { text: '⏳', key: m.key, }})
-await sleep(6000)
-zanspiw.sendMessage(m.chat, { react: { text: '⌛', key: m.key, }})
-zanspiw.sendMessage(`${global.idch}`, {audio: await quoted.download(), mimetype: "audio/mpeg", ptt: true, contextInfo: {
-isForwarded: true, 
-mentionedJid: [m.sender],
-businessMessageForwardInfo: { 
-businessOwnerJid: "120363409989642612@newsletter"
-}, 
-forwardedNewsletterMessageInfo: {
-newsletterName: `${text}`,
-newsletterJid: "120363409989642612@newsletter"}
-}},{quoted: m})
-await sleep(2000)
-zanspiw.sendMessage(m.chat, { react: { text: '✅', key: m.key, }})
-m.reply(`mengirim audio ke channel berhasil`)
-}
-db.users[m.sender].limit -= 20;
-await m.reply(`-20⚡ limit terpakai✓ sisa limit ${db.users[m.sender].limit}`)
-break 
-
+┃❀ ${prefix}upch
 ┃❀ ${prefix}tovn
 ┃❀ ${prefix}backup
 ┃❀ ${prefix}addplug
@@ -10029,8 +10006,6 @@ await sleep(2000)
 zanspiw.sendMessage(m.chat, { react: { text: '✅', key: m.key, }})
 m.reply(`mengirim audio ke channel berhasil`)
 }
-db.users[m.sender].limit -= 20;
-await m.reply(`-20⚡ limit terpakai✓ sisa limit ${db.users[m.sender].limit}`)
 break 
 
 
