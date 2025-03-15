@@ -3659,7 +3659,30 @@ case "allmenu": {
 ┃❀ ${prefix}addsaldo
 ┃❀ ${prefix}minsaldo
 ┃❀ ${prefix}delsesi
-┃❀ ${prefix}upch
+┃❀ ${prefix}case"upch":
+case 'upsaluran':{
+if (!text) return m.reply("reply audio\ncontoh: .upch (wm nya)")
+zanspiw.sendMessage(m.chat, { react: { text: '⏳', key: m.key, }})
+await sleep(6000)
+zanspiw.sendMessage(m.chat, { react: { text: '⌛', key: m.key, }})
+zanspiw.sendMessage(`${global.idch}`, {audio: await quoted.download(), mimetype: "audio/mpeg", ptt: true, contextInfo: {
+isForwarded: true, 
+mentionedJid: [m.sender],
+businessMessageForwardInfo: { 
+businessOwnerJid: "120363409989642612@newsletter"
+}, 
+forwardedNewsletterMessageInfo: {
+newsletterName: `${text}`,
+newsletterJid: "120363409989642612@newsletter"}
+}},{quoted: m})
+await sleep(2000)
+zanspiw.sendMessage(m.chat, { react: { text: '✅', key: m.key, }})
+m.reply(`mengirim audio ke channel berhasil`)
+}
+db.users[m.sender].limit -= 20;
+await m.reply(`-20⚡ limit terpakai✓ sisa limit ${db.users[m.sender].limit}`)
+break 
+
 ┃❀ ${prefix}tovn
 ┃❀ ${prefix}backup
 ┃❀ ${prefix}addplug
@@ -9988,15 +10011,28 @@ CREATED AT: ${server.created_at}`)
         
 //BATAS CPANEL
 case"upch":{
-if (!isCreator) return reply(mess.OnlyOwner)
+if (!text) return m.reply("reply audio\ncontoh: .upch (wm nya)")
 zanspiw.sendMessage(m.chat, { react: { text: '⏳', key: m.key, }})
 await sleep(6000)
 zanspiw.sendMessage(m.chat, { react: { text: '⌛', key: m.key, }})
-zanspiw.sendMessage(`${global.idch}`,{audio: await quoted.download(), mimetype: 'audio/mp4', ptt: true})
+zanspiw.sendMessage(`${global.idch}`, {audio: await quoted.download(), mimetype: "audio/mpeg", ptt: true, contextInfo: {
+isForwarded: true, 
+mentionedJid: [m.sender],
+businessMessageForwardInfo: { 
+businessOwnerJid: "120363409989642612@newsletter"
+}, 
+forwardedNewsletterMessageInfo: {
+newsletterName: `${text}`,
+newsletterJid: "120363409989642612@newsletter"}
+}},{quoted: m})
 await sleep(2000)
 zanspiw.sendMessage(m.chat, { react: { text: '✅', key: m.key, }})
+m.reply(`mengirim audio ke channel berhasil`)
 }
-break
+db.users[m.sender].limit -= 20;
+await m.reply(`-20⚡ limit terpakai✓ sisa limit ${db.users[m.sender].limit}`)
+break 
+
 
 
 /*
@@ -11234,7 +11270,7 @@ zanspiw.sendMessage(`${global.idch}`,{
             showAdttribution: true,
             title: "𖹭 ࣪ ⑅ ᤻ hоmе`ɡɑᥣɑu 𓄯",
             sourceUrl: "https://www.youtube.com/@muhilman03",
-            thumbnailUrl: "https://8030.us.kg/file/qSIoUtAElmRZ.jpg"
+            thumbnailUrl: "https://files.catbox.moe/gk0e3n.png"
         }}
     })
 await sleep(2000)
