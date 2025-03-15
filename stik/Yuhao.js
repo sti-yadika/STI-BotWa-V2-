@@ -10001,7 +10001,7 @@ case "upchannel2": {
 if (!isCreator) return Reply(mess.owner)
 if (!text) return m.reply(example("teksnya dengan mengirim foto"))
 if (!/image/.test(mime)) return m.reply(example("teksnya dengan mengirim foto"))
-let img = await zanspiw.downloadAndSaveMediaMessage(qmsg)
+let img = await zanspiw.downloadAndSaveMediaMessage(quoted)
 //await zanspiw.sendMessage(idSaluran, {image: await fs.readFileSync(img), caption: text})
 
 await zanspiw.sendMessage(global.idSaluran,{image: await fs.readFileSync(img), caption: text,
