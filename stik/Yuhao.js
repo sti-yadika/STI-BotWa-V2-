@@ -9987,7 +9987,16 @@ CREATED AT: ${server.created_at}`)
         break
         
 //BATAS CPANEL
-case"upch":{
+
+case "upchannel": {
+if (!isCreator) return Reply(mess.owner)
+if (!text) return m.reply(example("teksnya"))
+await zanspiw.sendMessage(idSaluran, {text: text})
+m.reply("Berhasil mengirim pesan *teks* ke dalam channel whatsapp")
+}
+break
+
+case"upch": {
 if (!text) return m.reply("reply audio\ncontoh: .upch (wm nya)")
 zanspiw.sendMessage(m.chat, { react: { text: '⏳', key: m.key, }})
 await sleep(6000)
