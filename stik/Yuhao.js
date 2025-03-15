@@ -309,6 +309,47 @@ if (budy.toLowerCase() == jawaban) {
 } else console.log('*Jawaban Salah!*')
 }
 
+zanspiw.sendKontol = async(chat, judul, teks, button, quot) => {
+let msg = generateWAMessageFromContent(chat, {
+viewOnceMessage: {
+message: {
+"messageContextInfo": {
+"deviceListMetadata": {},
+"deviceListMetadataVersion": 2
+},
+interactiveMessage: proto.Message.InteractiveMessage.create({
+body: proto.Message.InteractiveMessage.Body.create({
+text: teks
+}),
+footer: proto.Message.InteractiveMessage.Footer.create({
+text: footer
+}),
+header: proto.Message.InteractiveMessage.Header.create({
+title: judul,
+subtitle: namaOwner,
+hasMediaAttachment: false
+}),
+nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+buttons: button,
+}),
+contextInfo: {
+mentionedJid: [sender], 
+forwardingScore: 999,
+isForwarded: true,
+forwardedNewsletterMessageInfo: {
+newsletterJid: idSaluran,
+newsletterName: botname,
+serverMessageId: 143
+}
+}
+})
+}
+}
+}, {quoted: quot})
+
+await zanspiw.relayMessage(msg.key.remoteJid, msg.message, {messageId: msg.key.id})
+}
+
 zanspiw.autoshalat = zanspiw.autoshalat || {}
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? zanspiw.user.id : m.sender
 let id = m.chat 
